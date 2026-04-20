@@ -1,0 +1,7 @@
+bin/
+obj/
+Libs/
+*.user
+*.log
+GameData/LUA-NAR/Lua-Nar.log
+GameData/LUA-NAR/Lua-Nar.lua

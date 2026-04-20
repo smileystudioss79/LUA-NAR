@@ -1,0 +1,22 @@
+GAMEDATA INSTALL LAYOUT
+=======================
+
+Copy the following structure into your KSP GameData folder:
+
+GameData/
+└── LUA-NAR/
+    ├── Plugins/
+    │   ├── LUA-NAR.dll                  ← built output from dotnet build
+    │   └── MoonSharp.Interpreter.dll    ← from your Libs/ folder
+    └── Scripts/
+        ├── hello_world.lua
+        ├── telemetry.lua
+        ├── auto_throttle.lua
+        └── orbit_report.lua
+
+On first launch, LUA-NAR will auto-create:
+    GameData/LUA-NAR/Lua-Nar.log    ← session log + TOS + Privacy Policy
+    GameData/LUA-NAR/Lua-Nar.lua    ← API reference stub (written once only)
+
+Scripts in GameData/LUA-NAR/Scripts/ are loaded every time you enter a Flight scene.
+The file watcher hot-reloads any .lua file you save while KSP is running.

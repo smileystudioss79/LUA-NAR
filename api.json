@@ -1,0 +1,148 @@
+[
+  {
+    "name": "getLatitude",
+    "category": "Navigation",
+    "description": "Returns the current latitude of the vessel in degrees.",
+    "parameters": [],
+    "returnType": "number"
+  },
+  {
+    "name": "getLongitude",
+    "category": "Navigation",
+    "description": "Returns the current longitude of the vessel in degrees.",
+    "parameters": [],
+    "returnType": "number"
+  },
+  {
+    "name": "addManeuverNode",
+    "category": "Navigation",
+    "description": "Adds a maneuver node to the flight path.",
+    "parameters": [
+      { "name": "time", "type": "number", "description": "Seconds from now (UT)." },
+      { "name": "prograde", "type": "number", "description": "Delta-V prograde component." },
+      { "name": "normal", "type": "number", "description": "Delta-V normal component." },
+      { "name": "radial", "type": "number", "description": "Delta-V radial component." }
+    ],
+    "returnType": "void"
+  },
+  {
+    "name": "getTimeToApo",
+    "category": "Navigation",
+    "description": "Returns the time in seconds until the next apoapsis.",
+    "parameters": [],
+    "returnType": "number"
+  },
+  {
+    "name": "setSAS",
+    "category": "Flight Control",
+    "description": "Enables or disables the Stability Augmentation System (SAS).",
+    "parameters": [
+      { "name": "enabled", "type": "boolean", "description": "True to enable, False to disable." }
+    ],
+    "returnType": "void"
+  },
+  {
+    "name": "setThrottle",
+    "category": "Flight Control",
+    "description": "Sets the main engine throttle.",
+    "parameters": [
+      { "name": "level", "type": "number", "description": "Throttle level from 0.0 to 1.0." }
+    ],
+    "returnType": "void"
+  },
+  {
+    "name": "activateStage",
+    "category": "Flight Control",
+    "description": "Triggers the next stage in the staging stack.",
+    "parameters": [],
+    "returnType": "void"
+  },
+  {
+    "name": "apStartAscent",
+    "category": "Autopilot",
+    "description": "Initiates the automated ascent sequence.",
+    "parameters": [
+      { "name": "targetAltitude", "type": "number", "description": "Target orbit altitude in meters." },
+      { "name": "targetInclination", "type": "number", "description": "Target orbit inclination in degrees." }
+    ],
+    "returnType": "void"
+  },
+  {
+    "name": "apAbort",
+    "category": "Autopilot",
+    "description": "Immediately cancels all active autopilot routines.",
+    "parameters": [],
+    "returnType": "void"
+  },
+  {
+    "name": "getFuelPercent",
+    "category": "Vessel State",
+    "description": "Returns the remaining total fuel percentage (0.0 to 1.0).",
+    "parameters": [],
+    "returnType": "number"
+  },
+  {
+    "name": "isLanded",
+    "category": "Vessel State",
+    "description": "Returns true if the vessel is currently in a 'Landed' or 'Splashed' state.",
+    "parameters": [],
+    "returnType": "boolean"
+  },
+  {
+    "name": "getRadarAltitude",
+    "category": "Vessel State",
+    "description": "Returns the distance to the terrain directly beneath the vessel.",
+    "parameters": [],
+    "returnType": "number"
+  },
+  {
+    "name": "getVerticalSpeed",
+    "category": "Vessel State",
+    "description": "Returns the current vertical velocity in m/s.",
+    "parameters": [],
+    "returnType": "number"
+  },
+  {
+    "name": "getMaxThrust",
+    "category": "Vessel State",
+    "description": "Returns the maximum available thrust of all active engines in kN.",
+    "parameters": [],
+    "returnType": "number"
+  },
+  {
+    "name": "guiCreate",
+    "category": "UI",
+    "description": "Creates a new GUI window.",
+    "parameters": [
+      { "name": "title", "type": "string", "description": "Title of the window." }
+    ],
+    "returnType": "userdata"
+  },
+  {
+    "name": "onTick",
+    "category": "Core Hooks",
+    "description": "Registers a function to be called on every physics update.",
+    "parameters": [
+      { "name": "callback", "type": "function", "description": "The function to execute." }
+    ],
+    "returnType": "void"
+  },
+  {
+    "name": "setWarp",
+    "category": "Core Hooks",
+    "description": "Sets the time warp index.",
+    "parameters": [
+      { "name": "rate", "type": "number", "description": "Warp index (0-7)." }
+    ],
+    "returnType": "void"
+  },
+  {
+    "name": "logToFile",
+    "category": "Core Hooks",
+    "description": "Appends a string to the LUA-NAR log file.",
+    "parameters": [
+      { "name": "message", "type": "string", "description": "The text to log." }
+    ],
+    "returnType": "void"
+  }
+]
